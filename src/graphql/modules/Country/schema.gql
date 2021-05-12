@@ -1,0 +1,29 @@
+type Country {
+    _id: ID!
+    nome: String!
+    siglaPais: String!
+    capital: String!
+    # estados: [State]!
+}
+
+type Query {
+    paises: [Country!]!
+    pais(id: ID!): Country!
+    pais(nome: String!): Country!
+    pais(siglaPais: String!): Country!
+    pais(capital: String!): Country!
+    getPaisesBySigla(siglaPais: String!): Country!
+}
+
+input CountryInput {
+    nome: String!
+    siglaPais: String!
+    capital: String!
+    # estados: [State]!
+}
+
+type Mutation {
+    createCountry(data: CountryInput!): Country!
+    updateCountry(id: ID!, data: CountryInput!): Country!
+    deleteCountry(id: ID!): Boolean
+};

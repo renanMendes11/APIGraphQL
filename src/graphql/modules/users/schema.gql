@@ -1,0 +1,30 @@
+type User {
+    _id: ID!
+    nome: String!
+    email: String!
+    # idade: Int
+    ativado: Boolean!
+}
+
+type Query {
+    usuarios: [User!]!
+    usuario(id: ID!): User!
+    usuario(nome: String!): User!
+    usuario(email: String!): User!
+    # usuario(idade: Int!): User!
+    usuario(ativado: Boolean!): User!
+    getUsuarioByEmail(email: String!): User!
+}
+
+input UserInput {
+    nome: String!
+    email: String!
+    # idade: Int
+    ativado: Boolean!
+}
+
+type Mutation {
+    createUser(data: UserInput!): User!
+    updateUser(id: ID!, data: UserInput!): User!
+    deleteUser(id: ID!): Boolean
+};

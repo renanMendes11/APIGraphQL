@@ -1,0 +1,22 @@
+{
+  "name": "SeminarioGraphQL2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx nodemon --exec babel-node src/index.js -e js, gql"
+  },
+  "dependencies": {
+    "apollo-server": "^2.24.0",
+    "graphql": "^15.5.0",
+    "merge-graphql-schemas": "^1.7.8",
+    "mongoose": "^5.12.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.14.1",
+    "nodemon": "^2.0.7"
+  }
+}
