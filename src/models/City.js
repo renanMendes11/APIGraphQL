@@ -6,7 +6,7 @@ const Schema = new mongoose.Schema({
         required: true
     },
 
-    populacao: Int,
+    populacao: Number,
 
     estado: {
         type: mongoose.Schema.Types.ObjectId,

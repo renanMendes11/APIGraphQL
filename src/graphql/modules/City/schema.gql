@@ -7,9 +7,9 @@ type City {
 
 type Query {
     cidades: [City!]!
-    cidade(id: ID!): City!
-    cidade(nome: String!): City!
-    cidade(populacao: Int!): City!
+    getCidadeById(id: ID!): City!
+    getCidadeByNome(nome: String!): City!
+    getCidadeByPopulacao(populacao: Int!): City!
 }
 
 input CityInput {
@@ -22,4 +22,4 @@ type Mutation {
     createCity(data: CityInput!): City!
     updateCity(id: ID!, data: CityInput!): City!
     deleteCity(id: ID!): Boolean
-};
+}

@@ -7,9 +7,8 @@ type State {
 
 type Query {
     estados: [State!]!
-    estado(id: ID!): State!
-    estado(nome: String!): State!
-    estado(siglaEstado: String!): State!
+    getEstadoById(id: ID!): State!
+    getEstadoByNome(nome: String!): State!
     getEstadoBySigla(siglaEstado: String!): State!
 }
 
@@ -23,4 +22,4 @@ type Mutation {
     createState(data: StateInput!): State!
     updateState(id: ID!, data: StateInput!): State!
     deleteState(id: ID!): Boolean
-};
+}

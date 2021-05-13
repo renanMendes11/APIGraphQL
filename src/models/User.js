@@ -11,7 +11,7 @@ const Schema = new mongoose.Schema({
         required: true
     },
     
-    // idade: Int,
+    idade: Number,
 
     ativado: {
         type: Boolean,

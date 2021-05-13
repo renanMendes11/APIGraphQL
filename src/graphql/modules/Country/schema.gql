@@ -8,11 +8,10 @@ type Country {
 
 type Query {
     paises: [Country!]!
-    pais(id: ID!): Country!
-    pais(nome: String!): Country!
-    pais(siglaPais: String!): Country!
-    pais(capital: String!): Country!
-    getPaisesBySigla(siglaPais: String!): Country!
+    getPaisById(id: ID!): Country!
+    getPaisByNome(nome: String!): Country!
+    getPaisByCapital(capital: String!): Country!
+    getPaisBySigla(siglaPais: String!): Country!
 }
 
 input CountryInput {
@@ -26,4 +25,4 @@ type Mutation {
     createCountry(data: CountryInput!): Country!
     updateCountry(id: ID!, data: CountryInput!): Country!
     deleteCountry(id: ID!): Boolean
-};
+}
