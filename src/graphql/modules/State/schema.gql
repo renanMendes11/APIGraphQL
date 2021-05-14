@@ -2,7 +2,7 @@ type State {
     _id: ID!
     nome: String!
     siglaEstado: String!
-    pais: Country!
+    pais: Country
 }
 
 type Query {
@@ -15,7 +15,7 @@ type Query {
 input StateInput {
     nome: String!
     siglaEstado: String!
-    pais: ID!
+    pais: ID
 }
 
 type Mutation {

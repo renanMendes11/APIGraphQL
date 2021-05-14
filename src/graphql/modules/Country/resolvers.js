@@ -1,4 +1,5 @@
 import Country from '../../../models/Country';
+import State from '../../../models/State';
 
 export default {
     Query: {
@@ -9,7 +10,19 @@ export default {
         getPaisBySigla: (_, {sigla}) => Country.find(sigla)
     },
     Mutation: {
-        createCountry: (_, {data}) => Country.create(data),
+        createCountry: async (_, {data}) => {
+			try {
+				const response = await Country.create(data)
+				if (data.estados) {
+					await data.estados.map(estado => {
+						State.create({ pais: response._id, ...estado })
+					})
+				}
+				return { estados: data.estados, ...response._doc }
+			} catch (error) {
+				throw error
+			}
+		},
         updateCountry: (_, {id, data}) => Country.findOneAndUpdate(id, data, {new: true}), 
         deleteCountry: async (_, {id}) => !!(await Country.findOneAndDelete(id)) // !! força que o retorno seja um boolean
     },

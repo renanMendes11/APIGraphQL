@@ -16,17 +16,7 @@ const Schema = new mongoose.Schema({
         required: true
     },
 
-    // estados: {
-    //     type: mongoose.Schema.Types.Array,
-    //     ref: 'State',
-    //     required: true
-    // }
-
-    // estados: {
-    //     type: Array,
-    //     ref: 'State',
-    //     required: true
-    // }
+    estados: []
 
 });
 
